@@ -2,38 +2,9 @@
 
 import { Auth } from "@supabase/auth-ui-react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
 
 const AuthForm = () => {
   const supabase = createClientComponentClient();
-
-  const customTheme = {
-    default: {
-      colors: {
-        brand: "#1DA1F2",
-        brandAccent: "1DA1F2",
-        brandButtonText: "white",
-        // ..
-      },
-    },
-    dark: {
-      colors: {
-        brandButtonText: "white",
-        defaultButtonBackground: "#1DA1F2",
-        defaultButtonBackgroundHover: "#000000",
-        //..
-      },
-    },
-    // You can also add more theme variations with different names.
-    evenDarker: {
-      colors: {
-        brandButtonText: "white",
-        defaultButtonBackground: "##000000",
-        defaultButtonBackgroundHover: "##000000",
-        //..
-      },
-    },
-  };
 
   return (
     <div className="w-full h-[60%] flex items-center justify-center flex-col">

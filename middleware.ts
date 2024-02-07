@@ -14,7 +14,7 @@ export async function middleware(req: NextRequest) {
 
   // ALREADY LOGGED IN, SO DO NOT ALLOW ON LOGIN PAGE
   if (user && req.nextUrl.pathname === "/") {
-    return NextResponse.redirect(new URL("/all-watches", req.url));
+    return NextResponse.redirect(new URL("/home", req.url));
   }
 
   // NOT LOGGED IN, TRYING TO ACCESS ANY OTHER PAGE EXCEPT LOGIN
@@ -27,5 +27,5 @@ export async function middleware(req: NextRequest) {
 
 // DEFINES THE PATHS I WANNA RUN THIS MIDDLEWARE ON
 export const config = {
-  matcher: ["/", "/all-watches", "/add-watch"],
+  matcher: ["/", "/all-watches", "/add-watch", "/home"],
 };
