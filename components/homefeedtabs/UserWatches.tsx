@@ -22,8 +22,8 @@ const UserWatches = async () => {
   console.log("theres are the watches:", userWatches);
 
   return (
-    <div className="w-full min-h-[90vh] border-2 border-white flex flex-col text-center xl:text-start">
-      <h1 className="text-[20px]">Your watch collection</h1>
+    <div className="w-full min-h-[90vh] bg-white/10 rounded-lg md:rounded-xl xl:rounded-[36px] flex flex-col text-center xl:text-start">
+      <h1 className="text-[20px] p-5">Your watch collection</h1>
       <div className="w-full gap-3 h-full pb-[15vh] overflow-auto grid grid-cols-1 xl:grid-cols-2 p-2 lg:p-4">
         {userWatches?.map((card: Iwatchcard) => (
           <WatchCard

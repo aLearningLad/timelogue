@@ -1,10 +1,23 @@
 import { addWatch } from "@/app/server-actions/addWatch";
+import { add } from "@/devdata/add";
 import Link from "next/link";
 import { IoReturnUpBackOutline } from "react-icons/io5";
 
 const AddWatchPage = () => {
   return (
-    <div className="w-full h-screen p-1 md:p-3 xl:p-8 flex flex-col items-center bg-gradient-to-br from-black via-[#002244] to-black">
+    <div className="w-full relative h-screen p-1 md:p-3 xl:p-8 flex flex-col items-center bg-gradient-to-br from-black via-[#002244] to-black">
+      <nav className=" z-10 fixed flex items-center justify-center w-full xl:hidden bottom-0 h-[15vh] bg-white/60 backdrop-blur-md left-0 right-0 ">
+        {add.map((link) => (
+          <Link
+            className=" flex flex-col items-center"
+            key={link.id}
+            href={link.uniqueLink}
+          >
+            {link.img}
+            <p className="text-[18px]">{link.title}</p>
+          </Link>
+        ))}
+      </nav>
       <header className="hidden xl:flex w-full justify-start items-center h-[10vh]">
         <Link href="/home">
           <IoReturnUpBackOutline size={30} className="text-white" />
@@ -32,11 +45,7 @@ const AddWatchPage = () => {
         </div>
 
         {/* RIGHT SIDE  */}
-        <div className=" w-full xl:w-6/12 rounded-[36px] bg-neutral-50 h-[90vh] xl:h-full z-[5] absolute right-0 newbox">
-          {/* MAKER, MODEL, SHOPPING LINK, RATING, DETAILS,
-           CASE MATERIAL, STRAP MATERIAL, 
-           WATER RESISTANCE, POWER RESERVE HOURS,
-            MECHANICAL, FEATURES, PRICE */}
+        <div className="w-full xl:w-6/12 rounded-[36px] xl:bg-neutral-50 h-[90vh] xl:h-full z-[5] absolute right-0 newbox">
           <form
             className="text-black w-full h-full flex flex-col items-center p-3 xl:p-5"
             action={addWatch}
@@ -44,7 +53,7 @@ const AddWatchPage = () => {
           >
             <h1>Timepiece details</h1>
 
-            <section className="mt-5 h-full w-full overflow-auto flex flex-col items-center gap-2">
+            <section className="mt-5 h-full w-full overflow-auto flex flex-col items-center gap-2 xl:mb-0 mb-40">
               <div className="flex flex-col items-center text-center">
                 <label htmlFor="maker">Maker</label>
                 <input type="text" id="maker" name="maker" required />
@@ -123,7 +132,7 @@ const AddWatchPage = () => {
                   <option value="false">Select...</option>
                   <option value="true">1. Yes</option>
                   <option value="false">2. No</option>
-                  <option value="false">3. I don't know</option>
+                  <option value="false">3. I {"don't"} know</option>
                 </select>
               </div>
               <div className="flex flex-col items-center text-center w-full">

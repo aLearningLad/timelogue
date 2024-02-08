@@ -34,3 +34,10 @@ export type Iwatchcard = {
   mechanical: boolean;
   price: number;
 };
+
+export type Iadd = {
+  id: number;
+  title: string;
+  uniqueLink: string;
+  img: React.ReactElement;
+};

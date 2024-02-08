@@ -28,8 +28,6 @@ const HomePage = async () => {
     console.error(`Error while fetching timepieces.`);
   }
 
-  // console.log({ watches });
-
   return (
     <div className="w-full relative h-screen flex flex-col lg:flex-row bg-gradient-to-br from-black via-[#002244] to-black text-white p-1 md:p-3 lg:p-10">
       <nav className="flex xl:hidden fixed bottom-0 z-10 left-0 right-0 h-[15vh] bg-white/70 backdrop-blur-sm">
